@@ -31,12 +31,11 @@ const Hero: React.FC = () => {
   }, [currentText, currentIndex, isDeleting, texts]);
 
   const handleDownloadResume = () => {
-  const link = document.createElement('a');
-  link.href = '/resume.pdf';
-  link.download = 'Anas_Resume.pdf';
-  link.click();
+  window.open(
+    'https://drive.google.com/file/d/1p0fMr_qxHxkAvxv7Tsgfv27Svrbz-d-q/view?usp=sharing',
+    '_blank'
+  );
 };
-
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative">
