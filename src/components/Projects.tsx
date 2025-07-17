@@ -13,15 +13,6 @@ const Projects: React.FC = () => {
       live: 'https://gaming-website-alphaa.vercel.app/',
       featured: true,
     },
-    {
-      title: 'PERVUDOCS',
-      description: 'Temporary Document Manager.',
-      image: '/Pervudocs.png',
-      tech: ['React', 'TypeScript', 'Tailwind CSS','Vite','Shadcn-UI'],
-      github: 'https://github.com/itz-anas/PervuDocs',
-      live: 'https://pervu-docs.vercel.app/',
-      featured: true,
-    },
     
   ];
 
@@ -50,9 +41,9 @@ const Projects: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className={group relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${
+              className={`group relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${
                 project.featured ? 'md:col-span-2' : ''
-              }}
+              }`}
             >
               {project.featured && (
                 <div className="absolute top-4 right-4 z-10">
@@ -63,8 +54,8 @@ const Projects: React.FC = () => {
                 </div>
               )}
               
-              <div className={${project.featured ? 'md:flex' : ''}}>
-                <div className={${project.featured ? 'md:w-1/2' : ''} relative overflow-hidden}>
+              <div className={`${project.featured ? 'md:flex' : ''}`}>
+                <div className={`${project.featured ? 'md:w-1/2' : ''} relative overflow-hidden`}>
                   <img
                     src={project.image}
                     alt={project.title}
@@ -73,7 +64,7 @@ const Projects: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
-                <div className={${project.featured ? 'md:w-1/2' : ''} p-6}>
+                <div className={`${project.featured ? 'md:w-1/2' : ''} p-6`}>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                     {project.title}
                   </h3>
