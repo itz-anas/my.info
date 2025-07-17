@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
       tech: ['React', 'TypeScript', 'Tailwind CSS','Vite','Shadcn-UI'],
       github: 'https://github.com/itz-anas/PervuDocs',
       live: 'https://pervu-docs.vercel.app/',
-      featured: true,
+      featured: false,
     },
     
   ];
