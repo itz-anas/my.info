@@ -6,7 +6,7 @@ const Projects: React.FC = () => {
   const projects = [
     {
       title: 'GAMING WEBSITE 🕹️',
-      description: ' Zentry-inspired gaming site. Same energy, new repo.',
+      description: 'Zentry-inspired gaming site. Same energy, new repo.',
       image: '/GAMING-SITE.png',
       tech: ['React', 'TypeScript', 'Tailwind CSS'],
       github: 'https://github.com/itz-anas/gaming-website',
@@ -17,12 +17,11 @@ const Projects: React.FC = () => {
       title: 'PERVUDOCS',
       description: 'Temporary Document Manager.',
       image: '/Pervudocs.png',
-      tech: ['React', 'TypeScript', 'Tailwind CSS','Vite','Shadcn-UI'],
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Shadcn-UI'],
       github: 'https://github.com/itz-anas/PervuDocs',
       live: 'https://pervu-docs.vercel.app/',
       featured: false,
     },
-    
   ];
 
   return (
@@ -50,9 +49,9 @@ const Projects: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className={`group relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${
-                project.featured ? 'md:col-span-2' : ''
-              }`}
+              className={`group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 
+                ${project.featured ? 'md:col-span-2 flex flex-col md:flex-row' : 'flex flex-col'} 
+                bg-white dark:bg-gray-900`}
             >
               {project.featured && (
                 <div className="absolute top-4 right-4 z-10">
@@ -62,56 +61,58 @@ const Projects: React.FC = () => {
                   </span>
                 </div>
               )}
-              
-              <div className={`${project.featured ? 'md:flex' : ''}`}>
-                <div className={`${project.featured ? 'md:w-1/2' : ''} relative overflow-hidden`}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              {/* Image */}
+              <div className={`${project.featured ? 'md:w-1/2' : ''} relative overflow-hidden`}>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={`object-cover w-full ${
+                    project.featured ? 'h-full md:h-auto' : 'h-56'
+                  } group-hover:scale-105 transition-transform duration-300`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+
+              {/* Content */}
+              <div className={`${project.featured ? 'md:w-1/2' : ''} p-6`}>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                
-                <div className={`${project.featured ? 'md:w-1/2' : ''} p-6`}>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex space-x-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"
-                    >
-                      <Github className="mr-2" size={16} />
-                      Code
-                    </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
-                    >
-                      <ExternalLink className="mr-2" size={16} />
-                      Live Demo
-                    </a>
-                  </div>
+
+                <div className="flex space-x-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"
+                  >
+                    <Github className="mr-2" size={16} />
+                    Code
+                  </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                  >
+                    <ExternalLink className="mr-2" size={16} />
+                    Live Demo
+                  </a>
                 </div>
               </div>
             </motion.div>
