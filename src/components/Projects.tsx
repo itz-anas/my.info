@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
     {
       title: 'PERVUDOCS',
       description: 'Temporary Document Manager.',
-      image: '/GAMING-SITE.png',
+      image: '/Pervudocs.png',
       tech: ['React', 'TypeScript', 'Tailwind CSS','Vite','Shadcn-UI'],
       github: 'https://github.com/itz-anas/PervuDocs',
       live: 'https://pervu-docs.vercel.app/',
