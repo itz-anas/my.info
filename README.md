@@ -6,7 +6,7 @@ Welcome to my personal developer portfolio — a showcase of my skills, projects
 
 ## 🚀 Live Preview
 
-🔗 [Visit My Portfolio](https://my-site-two-snowy.vercel.app/)
+🔗 [Visit My Portfolio](https://mydevxportfolio.vercel.app/)
 
 </br>
 
